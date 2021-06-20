@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "79e2a4ce-51d8-49eb-a247-2fd669216986",
+		"name": "Django-drf-login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login and get Authentication Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI0ODAwODk4LCJqdGkiOiJkZjc2MGI5YTM4NGQ0YTAxYWYyNmRhMjhjMjk1MDg2MCIsInVzZXJfaWQiOjF9.rIQOUU0s-joW7kUYEUAanQn7gwyJfjPSiXJrT0D5no8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI0ODAwODk4LCJqdGkiOiJkZjc2MGI5YTM4NGQ0YTAxYWYyNmRhMjhjMjk1MDg2MCIsInVzZXJfaWQiOjF9.rIQOUU0s-joW7kUYEUAanQn7gwyJfjPSiXJrT0D5no8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"admin@123A\",\n    \"is_superuser\": false,\n    \"username\": \"how_to\",\n    \"first_name\": \"How\",\n    \"last_name\": \"To\",\n    \"email\": \"howto@gmail.com\",\n    \"is_staff\": false,\n    \"is_active\": false,\n    \"groups\": [],\n    \"user_permissions\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
