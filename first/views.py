@@ -14,4 +14,5 @@ class UserViewSet(viewsets.ModelViewSet):
 
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
-    queryset = get_user_model().objects.all()
+#     queryset = get_user_model().objects.all()  How get_user_model function have method like objects.all()
+    queryset = get_user_model()
